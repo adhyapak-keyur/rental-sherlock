@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build:skip-bindings": "vite build",
-    "build": "vite build",
+    "dev": "vite",
+    "build:skip-bindings": "vite build && pnpm copy:env",
+    "build": "vite build && pnpm copy:env",
+    "copy:env": "cp env.json dist/",
     "typecheck": "tsc --noEmit --pretty",
     "check": "biome check src",
     "fix": "biome check --write src"
@@ -19,8 +21,6 @@
     "@types/three": "0.176.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
-    "dotenv": "^16.5.0",
-    "dotenv-cli": "^8.0.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.17",
     "@tailwindcss/typography": "0.5.10",
