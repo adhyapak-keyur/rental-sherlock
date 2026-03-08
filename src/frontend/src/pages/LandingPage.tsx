@@ -66,7 +66,7 @@ export function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* === NAVBAR (transparent on landing) === */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[oklch(0.18_0.04_243)] backdrop-blur-sm shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link
             to="/"
@@ -110,6 +110,8 @@ export function LandingPage() {
             backgroundPosition: "center",
           }}
         />
+        {/* Dark overlay to ensure text contrast regardless of image */}
+        <div className="absolute inset-0 bg-navy/40 pointer-events-none" />
 
         {/* Decorative geometric elements */}
         <div className="absolute top-20 right-0 w-96 h-96 rounded-full bg-sage/5 blur-3xl pointer-events-none" />
@@ -139,7 +141,14 @@ export function LandingPage() {
             </div>
 
             {/* Main headline */}
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
+            <h1
+              className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6"
+              style={{
+                color: "white",
+                textShadow:
+                  "0 2px 16px oklch(0.14 0.045 243 / 0.7), 0 1px 4px oklch(0.14 0.045 243 / 0.5)",
+              }}
+            >
               Know Your Rights{" "}
               <span className="text-sage relative">
                 Before You Sign
@@ -183,7 +192,7 @@ export function LandingPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 h-14 text-base font-medium"
+                  className="border-white/40 text-white bg-transparent hover:bg-white/10 hover:border-white/60 hover:text-white h-14 text-base font-medium"
                 >
                   Sign in to your account
                 </Button>

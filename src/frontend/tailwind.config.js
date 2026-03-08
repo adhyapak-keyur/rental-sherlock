@@ -51,13 +51,13 @@ export default {
         },
         // Brand colors
         navy: {
-          DEFAULT: "oklch(var(--navy))",
-          light: "oklch(var(--navy-light))",
+          DEFAULT: "oklch(var(--navy) / <alpha-value>)",
+          light: "oklch(var(--navy-light) / <alpha-value>)",
         },
         sage: {
-          DEFAULT: "oklch(var(--sage))",
-          light: "oklch(var(--sage-light))",
-          pale: "oklch(var(--sage-pale))",
+          DEFAULT: "oklch(var(--sage) / <alpha-value>)",
+          light: "oklch(var(--sage-light) / <alpha-value>)",
+          pale: "oklch(var(--sage-pale) / <alpha-value>)",
         },
         chart: {
           1: "oklch(var(--chart-1))",
